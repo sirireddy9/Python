@@ -1,0 +1,22 @@
+def calculate_grade(aggregate):
+    if aggregate > 75:
+        return "Distinction"
+    elif 60 <= aggregate < 75:
+        return "First Division"
+    elif 50 <= aggregate < 60:
+        return "Second Division"
+    elif 40 <= aggregate < 50:
+        return "Third Division"
+    else:
+        return "Fail"
+marks = []
+for i in range(4):
+    subject_mark = float(input(f"Enter marks for subject {i+1}: "))
+    marks.append(subject_mark)
+
+total_marks = sum(marks)
+aggregate = total_marks / len(marks)
+grade = calculate_grade(aggregate)
+print("Total marks:", total_marks)
+print("Aggregate marks:", aggregate)
+print("Grade:", grade)

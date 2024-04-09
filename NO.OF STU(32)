@@ -1,0 +1,16 @@
+def count_users(total_users):
+    student_users = total_users // 2
+    staff_users = total_users - student_users
+    non_teaching_staff = staff_users // 3
+    return student_users, staff_users, non_teaching_staff
+
+# Input
+total_users = int(input("Enter the total number of users in the college: "))
+
+# Count users
+student_users, staff_users, non_teaching_staff = count_users(total_users)
+
+# Output
+print("Number of student users:", student_users)
+print("Number of staff users:", staff_users)
+print("Number of non-teaching staff users:", non_teaching_staff)

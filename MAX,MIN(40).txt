@@ -1,0 +1,23 @@
+def find_mth_maximum_and_nth_minimum(arr, m, n):
+    sorted_arr = sorted(arr)
+    mth_maximum = sorted_arr[-m]
+    nth_minimum = sorted_arr[n - 1]
+    return mth_maximum, nth_minimum
+
+# Sample array
+arr = [3, 7, 2, 9, 1, 4, 8, 6, 5]
+
+# Mth maximum and Nth minimum
+m = 2
+n = 3
+mth_maximum, nth_minimum = find_mth_maximum_and_nth_minimum(arr, m, n)
+
+# Calculate sum and difference
+sum_result = mth_maximum + nth_minimum
+difference_result = mth_maximum - nth_minimum
+
+# Output
+print(f"Mth maximum: {mth_maximum}")
+print(f"Nth minimum: {nth_minimum}")
+print("Sum:", sum_result)
+print("Difference:", difference_result)

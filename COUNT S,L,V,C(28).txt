@@ -1,0 +1,27 @@
+def count_spaces_lines_vowels_consonants(filename):
+    spaces = 0
+    lines = 0
+    vowels = 0
+    consonants = 0
+    vowels_set = set("aeiouAEIOU")
+
+    with open(filename, 'r') as file:
+        for line in file:
+            lines += 1
+            spaces += line.count(' ')
+            vowels += sum(1 for char in line if char in vowels_set)
+            consonants += sum(1 for char in line if char.isalpha() and char not in vowels_set)
+
+    return spaces, lines, vowels, consonants
+
+# Input
+filename = input("Enter the filename: ")
+
+# Count spaces, lines, vowels, and consonants
+spaces, lines, vowels, consonants = count_spaces_lines_vowels_consonants(filename)
+
+# Output
+print("Number of spaces:", spaces)
+print("Number of lines:", lines)
+print("Number of vowels:", vowels)
+print("Number of consonants:", consonants)

@@ -1,0 +1,16 @@
+def calculate_tax(income):
+    if income <= 150000:
+        tax = 0
+    elif income <= 300000:
+        tax = (income - 150000) * 0.1
+    elif income <= 500000:
+        tax = (150000 * 0.1) + ((income - 300000) * 0.2)
+    else:
+        tax = (150000 * 0.1) + (200000 * 0.2) + ((income - 500000) * 0.3)
+    return tax
+
+income = float(input("Enter your income: "))
+
+tax = calculate_tax(income)
+
+print("Tax payable:", tax)

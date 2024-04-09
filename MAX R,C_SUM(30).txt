@@ -1,0 +1,44 @@
+def matrix_row_sum(matrix):
+    row_sums = []
+    for row in matrix:
+        row_sum = sum(row)
+        row_sums.append(row_sum)
+    return row_sums
+
+def matrix_column_sum(matrix):
+    num_rows = len(matrix)
+    num_columns = len(matrix[0])
+    column_sums = [0] * num_columns
+    for i in range(num_columns):
+        column_sum = 0
+        for j in range(num_rows):
+            column_sum += matrix[j][i]
+        column_sums[i] = column_sum
+    return column_sums
+
+def matrix_diagonal_sum(matrix):
+    num_rows = len(matrix)
+    num_columns = len(matrix[0])
+    diagonal_sum1 = 0
+    diagonal_sum2 = 0
+    for i in range(num_rows):
+        diagonal_sum1 += matrix[i][i]
+        diagonal_sum2 += matrix[i][num_columns - i - 1]
+    return diagonal_sum1, diagonal_sum2
+
+# Sample matrix
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Calculate row, column, and diagonal sums
+row_sums = matrix_row_sum(matrix)
+column_sums = matrix_column_sum(matrix)
+diagonal_sum1, diagonal_sum2 = matrix_diagonal_sum(matrix)
+
+# Output
+print("Row sums:", row_sums)
+print("Column sums:", column_sums)
+print("Diagonal sums:", diagonal_sum1, diagonal_sum2)

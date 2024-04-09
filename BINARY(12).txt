@@ -1,0 +1,18 @@
+def decimal_to_binary(decimal):
+    binary = bin(decimal)[2:]
+    return binary
+
+def decimal_to_octal(decimal):
+    octal = oct(decimal)[2:]
+    return octal
+
+# Input
+decimal_number = int(input("Enter a decimal number: "))
+
+# Convert to binary and octal
+binary_number = decimal_to_binary(decimal_number)
+octal_number = decimal_to_octal(decimal_number)
+
+# Output
+print("Binary equivalent:", binary_number)
+print("Octal equivalent:", octal_number)

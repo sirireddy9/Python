@@ -1,0 +1,8 @@
+def nth_largest_number(numbers, n):
+    sorted_numbers = sorted(numbers, reverse=True)
+    return sorted_numbers[n - 1]
+numbers = [10, 20, 30, 40, 50]
+n = 3
+nth_largest = nth_largest_number(numbers, n)
+
+print(f"The {n}th largest number in the list is:", nth_largest)
